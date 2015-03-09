@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@android:id/tabhost"
+    >
+
+    <TabWidget
+        android:id="@android:id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+     />
+
+
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+        <RadioGroup
+            android:id="@+id/mainradiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/bar_homecreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/zhuyean"
+                android:button="@null"
+                />
+
+            <RadioButton
+                android:id="@+id/bar_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/gerenan"
+                android:button="@null"
+                />
+
+            <RadioButton
+                android:id="@+id/bar_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/guanzhuan"
+                android:button="@null"
+                />
+
+            <RadioButton
+                android:id="@+id/bar_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/pinglunan"
+                android:button="@null"
+                />
+
+            <RadioButton
+                android:id="@+id/bar_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shoucang"
+                android:button="@null"
+                />
+
+        </RadioGroup>
+
+
+
+</TabHost>

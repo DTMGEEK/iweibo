@@ -1,0 +1,108 @@
+package com.tg.iweibo.activity;
+
+
+import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+import com.tg.iweibo.R;
+import com.tg.iweibo.engine.MainService;
+import com.tg.iweibo.iservice.IWeiboActivity;
+import com.tg.iweibo.weiboutil.AccessTokenKeeper;
+
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+
+/**
+ * 登陆Activity
+ * 实现登录功能
+ */
+public class LoginActivity extends Activity implements IWeiboActivity {
+
+	 private static final String TAG = "LoginActivity";
+
+	 private RelativeLayout loginlayout = null;
+
+     private ImageView login_loginbn_iv = null;
+
+
+
+	    @Override
+	    protected void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	        this.setContentView(R.layout.login_layout);
+            this.login_loginbn_iv = (ImageView) this.findViewById(R.id.login_loginbn_iv);
+            this.login_loginbn_iv.setOnClickListener(this);
+
+	        AlphaAnimation anim = new AlphaAnimation(0.0f,1.0f);
+	        anim.setDuration(5000);
+	        this.loginlayout = (RelativeLayout) this.findViewById(R.id.loginlayout);
+	        this.loginlayout.setAnimation(anim);
+	        anim.start();
+
+
+     }
+
+		@Override
+		public void onClick(View v) {
+			switch(v.getId()){
+                //点击授权按钮，判断是否进行了授权没有就跳转到授权的activity进行授权
+                case R.id.login_loginbn_iv:
+                    if(!(LoginActivity.this.isAuthroze())) {
+                        Intent authIntent = new Intent(LoginActivity.this, AuthActivity.class);
+                        LoginActivity.this.startActivity(authIntent);
+                    }else{
+                        //已经授权就跳转到微博首页
+                        Intent homeIntent = new Intent(LoginActivity.this,HomeActivity.class);
+                        LoginActivity.this.startActivity(homeIntent);
+                    }
+                break;
+            }
+		}
+
+
+        //初始化方法
+		@Override
+		public void init() {
+
+		}
+
+		@Override
+		public void refresh(Object... params) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+        @Override
+        protected void onResume() {
+
+            super.onResume();
+        }
+
+
+        //判断用户有没有授权，没有就跳转到授权Activity
+         public boolean isAuthroze(){
+             boolean flag = false;
+             Oauth2AccessToken token = AccessTokenKeeper.readAccessToken(LoginActivity.this);
+             String uid = token.getUid();
+             if(!TextUtils.isEmpty(uid)){
+                 flag = true;
+             }
+             return flag;
+        }
+
+
+}

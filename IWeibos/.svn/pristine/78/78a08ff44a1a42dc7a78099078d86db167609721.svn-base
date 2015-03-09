@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="G:\AndroidTools\androieSDK\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-4385037ac794518c9bb32153a3d896217d18f753.jar" />
+    </item>
+    <item
+        jar="H:\AndroidStudioWP\IWeibos\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\classes-efb61794b1b69dd30a300794ec896e7f81476215.jar" />
+    </item>
+    <item
+        jar="H:\AndroidStudioWP\IWeibos\app\build\intermediates\exploded-aar\IWeibos\weiboSDK\unspecified\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="153449b7ddfcc501504d5fa9f96dc74e135b09dc">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\classes-fa66e0507678b70489583d1c88ae98f3b71df8e6.jar" />
+    </item>
+    <item
+        jar="H:\AndroidStudioWP\IWeibos\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-f20e4b88ec07ec62267d843728edb1bb659e8167.jar" />
+    </item>
+    <item
+        jar="H:\AndroidStudioWP\IWeibos\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\classes-9229cdc7abd932d9c6c250ab004821ee6bfae898.jar" />
+    </item>
+    <item
+        jar="H:\AndroidStudioWP\IWeibos\app\build\intermediates\exploded-aar\IWeibos\weiboSDK\unspecified\libs\weibosdkcore.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="06e990ea2d7b7ccd30cea6c5367314d7314d9f40">
+        <dex dex="H:\AndroidStudioWP\IWeibos\app\build\intermediates\pre-dexed\debug\weibosdkcore-5d29ca3c94271e40ad2cb743c612228cc65cbbd8.jar" />
+    </item>
+
+</items>

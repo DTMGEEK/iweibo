@@ -1,0 +1,85 @@
+package com.tg.iweibo.domain;
+
+import android.graphics.drawable.Drawable;
+
+/**
+ * Created by jake（lian_weijian@126.com）
+ * Date: 2015-01-14
+ * Time: 20:11
+ * 保存用户信息domain类
+ */
+
+public class UserInfo {
+
+    //id
+    private long _id;
+    //用户id
+    private String uid;
+    //用户名
+    private String userName;
+    //token
+    private String token;
+    //用户类型
+    private String accountType;
+    //是否是默认账号
+    private String isDefault;
+    //用户头像
+    private Drawable userIcon;
+
+
+    public long get_id() {
+        return _id;
+    }
+
+    public void set_id(long _id) {
+        this._id = _id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(String isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    public Drawable getUserIcon() {
+        return userIcon;
+    }
+
+    public void setUserIcon(Drawable userIcon) {
+        this.userIcon = userIcon;
+    }
+}

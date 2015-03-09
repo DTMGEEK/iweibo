@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/customlisetview_headerlayout_padding"
+        android:paddingBottom="@dimen/customlisetview_headerlayout_padding"
+        >
+
+            <LinearLayout
+                android:id="@+id/customlistview_header_llayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/customlistview_header_tip_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customlistview_header_tip_text"
+                    />
+                
+                <TextView
+                    android:id="@+id/customlistview_header_lasttimeupdate_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2015-12-5 12:12:34"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/customlistview_header_arrow_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/customlistview_header_llayout"
+                android:src="@drawable/pull_to_refresh_arrow"
+                android:visibility="gone"
+                />
+        
+            <ProgressBar
+                android:id="@+id/customlistview_header_progress_pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/customlistview_header_llayout"
+                style="?android:attr/progressBarStyle"
+                android:layout_marginRight="20dip"
+                android:visibility="gone"
+                />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/item_collection_img_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/nb_a"
+        />
+
+
+    <TextView
+        android:id="@+id/item_collection_btime_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/blog_text_size"
+        android:text="item_collection_btime_tv"
+        />
+
+
+    <TextView
+        android:id="@+id/item_collection_btext_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/item_collection_img_iv"
+        android:textSize="@dimen/blog_text_size"
+        android:text="item_collection_btext_tv"
+        />
+
+    <TextView
+        android:id="@+id/item_collection_r_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/item_collection_btext_tv"
+        android:textSize="@dimen/blog_text_size"
+        android:text="item_collection_r_num_tv"
+        />
+
+
+    <TextView
+        android:id="@+id/item_collection_buname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_above="@id/item_collection_btext_tv"
+        android:layout_marginLeft="16dip"
+        android:layout_toRightOf="@id/item_collection_img_iv"
+        android:textSize="@dimen/blog_text_size"
+        android:text="item_collection_buname_tv"
+        />
+
+
+</RelativeLayout>

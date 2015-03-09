@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:layout_marginLeft="30dip"
+        >
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/auth_dialog_logo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/auth_button_textsize"
+            android:textColor="@color/white"
+            android:text="@string/auth_dialog_hint"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dip"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/auth_button_textsize"
+        android:text="@string/auth_dialog_content"
+        />
+
+
+    <Button
+        android:id="@+id/oauth_bn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/auth_button_style"
+        android:text="@string/auth_dialog_bn_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="23dp"
+        />
+
+</LinearLayout>

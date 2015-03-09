@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tg.iweibo.customcontrols.SildingFinishLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bjs"
+    android:id="@+id/sildingFinishLayout"
+    >
+    
+    <EditText
+        android:id="@+id/sendweibo_weibo_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_sendweibo_et_height"
+        android:background="@drawable/kuang"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/activity_sendweibo_et_margintop"
+        android:maxLength="140"
+        android:singleLine="false"
+        >
+        <requestFocus/>
+     </EditText>
+
+
+    <TextView
+        android:id="@+id/sendweibo_tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/white"
+        android:text="@string/sendweibo_tip_text"
+        android:layout_below="@id/sendweibo_weibo_et"
+        android:paddingTop="50dip"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+
+</com.tg.iweibo.customcontrols.SildingFinishLayout>

@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bjt"
+    tools:context="com.tg.iweibo.activity.CollectionFragment">
+
+
+    <include layout="@layout/progress"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/listview_paddingtop"
+        >
+
+        <com.tg.iweibo.customcontrols.RefreshListView
+            android:id="@+id/list_collection"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+        </com.tg.iweibo.customcontrols.RefreshListView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

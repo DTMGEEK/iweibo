@@ -1,0 +1,111 @@
+package com.tg.iweibo.weiboutil;
+
+import org.apache.http.HttpEntity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * Created by jake（lian_weijian@126.com）
+ * Date: 2015-01-19
+ * Time: 15:19
+ */
+
+public class JsonParser {
+
+
+    /**
+     * 读取数据方法
+     * @param is
+     * @return
+     * @throws java.io.IOException
+     */
+    private static byte[] readStream(InputStream is) throws IOException {
+        ByteArrayOutputStream bout = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = 0;
+        while ((len = is.read(buffer)) != -1) {
+            bout.write(buffer, 0, len);
+        }
+        is.close();
+        bout.close();
+        return bout.toByteArray();
+    }
+
+
+    //获取当前登录用户及其所关注用户的最新微博的JSON数据
+    public static List<Map<String,Object>> friendsTimeLine_To_Map(HttpEntity entity) throws IOException, JSONException {
+        //取得json格式的数据
+
+        List<Map<String,Object>> list = new ArrayList<>();
+        byte [] byteData = readStream( entity.getContent());
+        String strData = new String(byteData);
+        JSONObject jsonObject = new JSONObject(strData);
+        JSONArray statusesArray = jsonObject.getJSONArray("statuses");
+        for(int i = 0; i < statusesArray.length(); i++){
+            Map<String,Object> friendsTimeLineMap = new HashMap<String,Object>();
+            JSONObject jsonItem = statusesArray.getJSONObject(i);
+            friendsTimeLineMap.put("created_at",jsonItem.getString("created_at"));
+            friendsTimeLineMap.put("id",jsonItem.getString("id"));
+            friendsTimeLineMap.put("text",jsonItem.getString("text"));
+            friendsTimeLineMap.put("source",jsonItem.getString("source"));
+            friendsTimeLineMap.put("favorited",jsonItem.getBoolean("favorited"));
+            friendsTimeLineMap.put("truncated",jsonItem.getBoolean("truncated"));
+            friendsTimeLineMap.put("in_reply_to_user_id",jsonItem.getString("in_reply_to_user_id"));
+            friendsTimeLineMap.put("in_reply_to_screen_name",jsonItem.getString("in_reply_to_screen_name"));
+            friendsTimeLineMap.put("geo",jsonItem.getString("geo"));
+            friendsTimeLineMap.put("mid",jsonItem.getString("mid"));
+            friendsTimeLineMap.put("reposts_count",jsonItem.getInt("reposts_count"));
+            friendsTimeLineMap.put("comments_count",jsonItem.getInt("comments_count"));
+
+            JSONObject userInfoItem = jsonItem.getJSONObject("user");
+
+            Map<String,Object> userInfoMap = new HashMap<String,Object>();
+            userInfoMap.put("id",userInfoItem.getInt("id"));
+            userInfoMap.put("screen_name",userInfoItem.getString("screen_name"));
+            userInfoMap.put("name",userInfoItem.getString("name"));
+            userInfoMap.put("province",userInfoItem.getString("province"));
+            userInfoMap.put("city",userInfoItem.getString("city"));
+            userInfoMap.put("location",userInfoItem.getString("location"));
+            userInfoMap.put("description",userInfoItem.getString("description"));
+            userInfoMap.put("url",userInfoItem.getString("url"));
+            userInfoMap.put("profile_image_url",userInfoItem.getString("profile_image_url"));
+            userInfoMap.put("domain",userInfoItem.getString("domain"));
+            userInfoMap.put("gender",userInfoItem.getString("gender"));
+            userInfoMap.put("followers_count",userInfoItem.getInt("followers_count"));
+            userInfoMap.put("friends_count",userInfoItem.getInt("friends_count"));
+            userInfoMap.put("created_at",userInfoItem.getString("created_at"));
+            userInfoMap.put("following",userInfoItem.getBoolean("following"));
+            userInfoMap.put("allow_all_act_msg",userInfoItem.getBoolean("allow_all_act_msg"));
+            userInfoMap.put("geo_enabled",userInfoItem.getBoolean("geo_enabled"));
+            userInfoMap.put("verified",userInfoItem.getBoolean("verified"));
+            userInfoMap.put("allow_all_comment",userInfoItem.getBoolean("allow_all_comment"));
+            userInfoMap.put("follow_me",userInfoItem.getBoolean("follow_me"));
+            userInfoMap.put("remark",userInfoItem.getString("remark"));
+            userInfoMap.put("avatar_large",userInfoItem.getString("avatar_large"));
+            userInfoMap.put("verified_reason",userInfoItem.getString("verified_reason"));
+            userInfoMap.put("online_status",userInfoItem.getInt("online_status"));
+            userInfoMap.put("bi_followers_count",userInfoItem.getInt("bi_followers_count"));
+
+            friendsTimeLineMap.put("userInfoMap",userInfoMap);
+            list.add(friendsTimeLineMap);
+        }
+
+        return list;
+    }
+
+
+
+
+
+
+}

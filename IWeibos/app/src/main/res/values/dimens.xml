@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="auth_button_textsize">18dp</dimen>
+    <dimen name="tab_item_view_textsize">10dp</dimen>
+    <dimen name="customlisetview_headerlayout_padding">10dip</dimen>
+    <dimen name="activity_sendweibo_et_height">260dip</dimen>
+
+
+    <dimen name="activity_sendweibo_et_margintop">90dip</dimen>
+    <dimen name="text_size">15dp</dimen>
+    <dimen name="text_size_big">25dp</dimen>
+
+    <dimen name="activity_sendreivew_et_height">160dip</dimen>
+    <dimen name="activity_sendreivew_iv_paddingtop">30dip</dimen>
+
+    <dimen name="title_bar_height">30dip</dimen>
+    <dimen name="listview_paddingtop">0dip</dimen>
+
+    <dimen name="blog_text_size">18dp</dimen>
+
+    <dimen name="progress_bar_width">40dip</dimen>
+    <dimen name="progress_bar_height">40dip</dimen>
+
+    <dimen name="hoem_layout_send_weibo_iv_width">41dip</dimen>
+    <dimen name="hoem_layout_send_weibo_iv_height">21dip</dimen>
+
+</resources>
